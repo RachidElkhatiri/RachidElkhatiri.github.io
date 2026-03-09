@@ -1,0 +1,23 @@
+<section id="skills" class="section-space">
+  <div class="container">
+    <div class="section-header" appRevealOnScroll>
+      <p class="section-kicker">Competences techniques</p>
+      <h3>Stack maitrisee de bout en bout</h3>
+    </div>
+
+    <div class="row g-4">
+      @for (group of skillGroups; track group.category) {
+        <div class="col-md-6" appRevealOnScroll>
+          <article class="card-modern p-4 h-100">
+            <h4 class="mb-3">{{ group.category }}</h4>
+            <div class="tech-grid">
+              @for (tech of group.items; track tech) {
+                <span>{{ tech }}</span>
+              }
+            </div>
+          </article>
+        </div>
+      }
+    </div>
+  </div>
+</section>

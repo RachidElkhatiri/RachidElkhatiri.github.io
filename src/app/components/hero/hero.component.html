@@ -1,0 +1,32 @@
+<section id="hero" class="hero-section section-space">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7" appRevealOnScroll>
+        <p class="eyebrow">Disponible pour missions Full Stack</p>
+        <h1>{{ profile.fullName }}</h1>
+        <h2>{{ profile.role }}</h2>
+        <p class="hero-intro">{{ profile.shortIntro }}</p>
+        <p class="hero-description">{{ profile.heroDescription }}</p>
+
+        <div class="hero-actions">
+          <a [href]="profile.cvLink" class="btn btn-accent" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-download"></i>
+            Telecharger CV
+          </a>
+          <button type="button" class="btn btn-outline-modern" (click)="scrollToProjects()">Voir mes projets</button>
+          <button type="button" class="btn btn-outline-modern" (click)="scrollToContact()">Me contacter</button>
+        </div>
+      </div>
+
+      <div class="col-lg-5" appRevealOnScroll>
+        <div class="avatar-wrap">
+          <img [src]="profile.avatar" [alt]="'Photo de ' + profile.fullName">
+          <div class="floating-chip">
+            <i class="fa-solid fa-code"></i>
+            Java + Angular
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

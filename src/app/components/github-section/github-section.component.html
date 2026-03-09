@@ -1,0 +1,37 @@
+<section id="github" class="section-space">
+  <div class="container">
+    <div class="section-header" appRevealOnScroll>
+      <p class="section-kicker">GitHub</p>
+      <h3>Contributions et activite recente</h3>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-8" appRevealOnScroll>
+        <div class="card-modern p-3 p-lg-4">
+          <img
+            class="github-img mb-3"
+            [src]="'https://github-readme-stats.vercel.app/api?username=' + githubUsername + '&show_icons=true&theme=react-dark&hide_border=true'"
+            alt="GitHub stats">
+          <img
+            class="github-img"
+            [src]="'https://github-readme-activity-graph.vercel.app/graph?username=' + githubUsername + '&theme=react-dark&hide_border=true'"
+            alt="GitHub contribution graph">
+        </div>
+      </div>
+
+      <div class="col-lg-4" appRevealOnScroll>
+        <div class="card-modern p-4 h-100">
+          <h4 class="mb-3">Repos recents</h4>
+          <div class="repo-list">
+            @for (repo of repos; track repo.name) {
+              <a [href]="repo.link" target="_blank" rel="noopener noreferrer" class="repo-item">
+                <h5>{{ repo.name }}</h5>
+                <p>{{ repo.description }}</p>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

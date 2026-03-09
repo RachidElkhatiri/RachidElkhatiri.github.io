@@ -1,0 +1,52 @@
+<section id="contact" class="section-space">
+  <div class="container">
+    <div class="section-header" appRevealOnScroll>
+      <p class="section-kicker">Contact</p>
+      <h3>Discutons de votre prochain projet</h3>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-6" appRevealOnScroll>
+        <form [formGroup]="contactForm" (ngSubmit)="submit()" class="card-modern p-4">
+          <div class="mb-3">
+            <label for="name" class="form-label">Nom</label>
+            <input id="name" class="form-control modern-input" type="text" formControlName="name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input id="email" class="form-control modern-input" type="email" formControlName="email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-control modern-input" rows="5" formControlName="message"></textarea>
+          </div>
+
+          @if (submitted && contactForm.invalid) {
+            <p class="validation-text">Merci de remplir correctement tous les champs.</p>
+          }
+
+          <button class="btn btn-accent" type="submit">
+            <i class="fa-solid fa-paper-plane"></i> Envoyer
+          </button>
+        </form>
+      </div>
+
+      <div class="col-lg-6" appRevealOnScroll>
+        <div class="card-modern p-4 h-100">
+          <h4 class="mb-3">Coordonnees</h4>
+          <div class="contact-list">
+            @for (item of contacts; track item.label) {
+              <a class="contact-item" [href]="item.link" target="_blank" rel="noopener noreferrer">
+                <i [class]="item.iconClass"></i>
+                <div>
+                  <p class="mb-0 fw-bold">{{ item.label }}</p>
+                  <small>{{ item.value }}</small>
+                </div>
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

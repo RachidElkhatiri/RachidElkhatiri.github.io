@@ -1,0 +1,18 @@
+<header class="portfolio-nav sticky-top">
+  <div class="container py-3 d-flex align-items-center justify-content-between gap-3">
+    <a class="brand" (click)="scrollToSection('hero')">Portfolio.dev</a>
+
+    <nav class="d-none d-lg-flex align-items-center gap-4">
+      @for (section of sections; track section.id) {
+        <button type="button" class="nav-link-clean" (click)="scrollToSection(section.id)">
+          {{ section.label }}
+        </button>
+      }
+    </nav>
+
+    <button type="button" class="theme-button" (click)="themeToggle.emit()">
+      <i [class]="isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+      <span>{{ isDark ? 'Mode clair' : 'Mode sombre' }}</span>
+    </button>
+  </div>
+</header>

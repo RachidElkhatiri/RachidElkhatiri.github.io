@@ -1,0 +1,30 @@
+<section id="experience" class="section-space">
+  <div class="container">
+    <div class="section-header" appRevealOnScroll>
+      <p class="section-kicker">Experience</p>
+      <h3>Timeline professionnelle</h3>
+    </div>
+
+    <div class="timeline">
+      @for (exp of experiences; track exp.title) {
+        <article class="timeline-item card-modern p-4 mb-3" appRevealOnScroll>
+          <p class="timeline-period">{{ exp.period }}</p>
+          <h4>{{ exp.title }}</h4>
+          <p class="mb-3">{{ exp.context }}</p>
+
+          <div class="tech-grid mb-3">
+            @for (tech of exp.technologies; track tech) {
+              <span>{{ tech }}</span>
+            }
+          </div>
+
+          <ul class="list-clean mb-0">
+            @for (responsibility of exp.responsibilities; track responsibility) {
+              <li><i class="fa-solid fa-arrow-right"></i> {{ responsibility }}</li>
+            }
+          </ul>
+        </article>
+      }
+    </div>
+  </div>
+</section>

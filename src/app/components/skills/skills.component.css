@@ -1,0 +1,14 @@
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tech-grid span {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.94rem;
+  color: var(--text-secondary);
+}

@@ -1,0 +1,43 @@
+.timeline {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(var(--accent), transparent);
+}
+
+.timeline-item {
+  margin-left: 0.8rem;
+}
+
+.timeline-period {
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.78rem;
+  margin-bottom: 0.35rem;
+}
+
+.list-clean {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.list-clean li {
+  color: var(--text-secondary);
+}
+
+.list-clean i {
+  color: var(--accent);
+  margin-right: 0.4rem;
+}
