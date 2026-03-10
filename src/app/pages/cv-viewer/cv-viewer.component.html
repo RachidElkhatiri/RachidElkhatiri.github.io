@@ -1,33 +1,33 @@
-<section class="min-h-screen py-8 px-4 sm:px-8 cv-page">
+<section class="min-h-screen py-10 sm:py-14 px-4">
+  <div class="max-w-6xl mx-auto premium-card p-4 sm:p-6 md:p-8 relative overflow-hidden">
+    <div class="absolute -top-16 -right-8 h-40 w-40 rounded-full bg-sky-200/40 blur-3xl"></div>
+    <div class="absolute -bottom-20 -left-10 h-44 w-44 rounded-full bg-pink-200/35 blur-3xl"></div>
 
-  <div class="max-w-6xl mx-auto">
-    <div class="cv-shell rounded-2xl p-4 sm:p-6">
-      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
-        <div>
-          <p class="text-xs uppercase tracking-widest cv-kicker mb-1">Visualisation du CV</p>
-          <h1 class="text-2xl sm:text-3xl font-bold cv-title">Mon CV</h1>
-          <p class="cv-subtitle mb-0">Visualisation integree du CV.</p>
-        </div>
-        <div class="flex flex-wrap gap-2">
-          <a [href]="pdfPath" target="_blank" rel="noopener noreferrer" class="cv-open-btn inline-flex items-center gap-2">
-            <i class="fa-solid fa-up-right-from-square"></i>
-            Ouvrir dans un nouvel onglet
-          </a>
-          <a routerLink="/" class="cv-back-btn inline-flex items-center gap-2">
-            <i class="fa-solid fa-arrow-left"></i>
-            Retour au portfolio
-          </a>
-        </div>
+    <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-5">
+      <div>
+        <p class="section-kicker mb-2">CV Viewer</p>
+        <h1 class="text-2xl sm:text-3xl font-bold">Mon CV - Full Stack Java / Angular</h1>
+        <p class="text-[var(--text-secondary)] mt-1">Visualisation integree dans une interface claire et professionnelle.</p>
       </div>
+      <div class="flex flex-wrap gap-2">
+        <a [href]="pdfPath" target="_blank" rel="noopener noreferrer" class="btn-secondary-premium">
+          <i class="fa-solid fa-up-right-from-square"></i>
+          Ouvrir dans un nouvel onglet
+        </a>
+        <a routerLink="/" class="btn-primary-premium">
+          <i class="fa-solid fa-arrow-left"></i>
+          Retour
+        </a>
+      </div>
+    </div>
 
-      <div class="cv-frame-wrapper rounded-xl overflow-hidden">
-        <iframe
-          [src]="pdfViewerUrl"
-          class="w-full cv-frame"
-          title="CV Viewer"
-          referrerpolicy="no-referrer">
-        </iframe>
-      </div>
+    <div class="relative z-10 rounded-2xl overflow-hidden border border-[var(--border)] shadow-[0_10px_35px_rgba(23,31,49,0.08)]">
+      <iframe
+        [src]="pdfViewerUrl"
+        class="w-full h-[76vh] bg-white"
+        title="CV Viewer"
+        referrerpolicy="no-referrer">
+      </iframe>
     </div>
   </div>
 </section>
