@@ -9,7 +9,11 @@
         <p class="hero-description">{{ profile.heroDescription }}</p>
 
         <div class="hero-actions">
-          <a [href]="profile.cvLink" class="btn btn-accent" target="_blank" rel="noopener noreferrer">
+          <a routerLink="/cv-viewer" class="btn btn-accent">
+            <i class="fa-solid fa-eye"></i>
+            Visualiser mon CV
+          </a>
+          <a [href]="cvDownloadPath" download="Rachid-EL-KHATIRI-CV.pdf" class="btn btn-outline-modern">
             <i class="fa-solid fa-download"></i>
             Telecharger CV
           </a>

@@ -14,12 +14,10 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render portfolio sections', async () => {
+  it('should render router outlet shell', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('#hero')).toBeTruthy();
-    expect(compiled.querySelector('#projects')).toBeTruthy();
-    expect(compiled.querySelector('#contact')).toBeTruthy();
+    expect(compiled.querySelector('router-outlet')).toBeTruthy();
   });
 });

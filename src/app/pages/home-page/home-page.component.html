@@ -1,0 +1,18 @@
+<div class="portfolio-shell">
+  <app-navbar [isDark]="isDark()" (themeToggle)="toggleTheme()"></app-navbar>
+
+  <main>
+    <app-hero [profile]="profile"></app-hero>
+    <app-about [profile]="profile"></app-about>
+    <app-skills [skillGroups]="profile.skillGroups"></app-skills>
+    <app-projects [projects]="profile.projects"></app-projects>
+    <app-experience [experiences]="profile.experiences"></app-experience>
+    <app-github-section
+      [githubUsername]="profile.githubUsername"
+      [repos]="profile.highlightRepos">
+    </app-github-section>
+    <app-contact [contacts]="profile.contacts"></app-contact>
+  </main>
+
+  <app-footer [profile]="profile"></app-footer>
+</div>
