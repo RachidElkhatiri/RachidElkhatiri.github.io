@@ -1,18 +1,31 @@
-<header class="portfolio-nav sticky-top">
-  <div class="container py-3 d-flex align-items-center justify-content-between gap-3">
-    <a class="brand" (click)="scrollToSection('hero')">Portfolio.dev</a>
+<header class="sticky top-0 z-50 backdrop-blur-xl border-b border-[var(--border)]/80 bg-white/75 dark:bg-[#111827]/80">
+  <div class="section-shell !py-4 flex items-center justify-between gap-3">
+    <a class="text-base sm:text-lg font-semibold tracking-tight cursor-pointer" (click)="scrollToSection('hero')">
+      Rachid.dev
+    </a>
 
-    <nav class="d-none d-lg-flex align-items-center gap-4">
+    <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-[var(--text-secondary)]">
       @for (section of sections; track section.id) {
-        <button type="button" class="nav-link-clean" (click)="scrollToSection(section.id)">
+        <button type="button" class="hover:text-[var(--text-primary)] transition-colors" (click)="scrollToSection(section.id)">
           {{ section.label }}
         </button>
       }
     </nav>
 
-    <button type="button" class="theme-button" (click)="themeToggle.emit()">
-      <i [class]="isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
-      <span>{{ isDark ? 'Mode clair' : 'Mode sombre' }}</span>
-    </button>
+    <div class="flex items-center gap-2">
+      <button
+        type="button"
+        class="h-10 w-10 rounded-full border border-[var(--border)] bg-white/90 dark:bg-[var(--surface-soft)] flex items-center justify-center"
+        (click)="themeToggle.emit()"
+        aria-label="Theme">
+        <i [class]="isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon'"></i>
+      </button>
+      <button
+        type="button"
+        class="hidden sm:inline-flex btn-primary-premium"
+        (click)="scrollToSection('contact')">
+        Contact
+      </button>
+    </div>
   </div>
 </header>

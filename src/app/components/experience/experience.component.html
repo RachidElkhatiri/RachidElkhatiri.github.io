@@ -1,26 +1,29 @@
-<section id="experience" class="section-space">
-  <div class="container">
-    <div class="section-header" appRevealOnScroll>
+<section id="experience">
+  <div class="section-shell">
+    <div class="mb-10 max-w-3xl" appRevealOnScroll>
       <p class="section-kicker">Experience</p>
-      <h3>Timeline professionnelle</h3>
+      <h3 class="section-title">Execution technique et architecture en contexte reel</h3>
     </div>
 
-    <div class="timeline">
+    <div class="space-y-5">
       @for (exp of experiences; track exp.title) {
-        <article class="timeline-item card-modern p-4 mb-3" appRevealOnScroll>
-          <p class="timeline-period">{{ exp.period }}</p>
-          <h4>{{ exp.title }}</h4>
-          <p class="mb-3">{{ exp.context }}</p>
+        <article class="premium-card p-6 sm:p-7" appRevealOnScroll>
+          <p class="section-kicker mb-2">{{ exp.period }}</p>
+          <h4 class="text-2xl font-semibold mb-2">{{ exp.title }}</h4>
+          <p class="text-[var(--text-secondary)] mb-4">{{ exp.context }}</p>
 
-          <div class="tech-grid mb-3">
+          <div class="flex flex-wrap gap-2 mb-4">
             @for (tech of exp.technologies; track tech) {
-              <span>{{ tech }}</span>
+              <span class="premium-pill">{{ tech }}</span>
             }
           </div>
 
-          <ul class="list-clean mb-0">
+          <ul class="space-y-2 text-[var(--text-secondary)]">
             @for (responsibility of exp.responsibilities; track responsibility) {
-              <li><i class="fa-solid fa-arrow-right"></i> {{ responsibility }}</li>
+              <li class="flex items-start gap-2">
+                <i class="fa-solid fa-arrow-right mt-1 text-xs text-[#2b6df8]"></i>
+                <span>{{ responsibility }}</span>
+              </li>
             }
           </ul>
         </article>

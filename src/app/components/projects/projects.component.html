@@ -1,36 +1,45 @@
-<section id="projects" class="section-space">
-  <div class="container">
-    <div class="section-header" appRevealOnScroll>
+<section id="projects">
+  <div class="section-shell">
+    <div class="mb-12 max-w-3xl" appRevealOnScroll>
       <p class="section-kicker">Projets</p>
-      <h3>Realisations techniques recentes</h3>
+      <h3 class="section-title">Realisations full stack orientees impact metier</h3>
+      <p class="section-subtitle mt-3">
+        Applications de gestion, publication scientifique, generation PDF et architectures backend microservices.
+      </p>
     </div>
 
-    <div class="row g-4">
+    <div class="grid lg:grid-cols-2 gap-7">
       @for (project of projects; track project.name) {
-        <div class="col-lg-6" appRevealOnScroll>
-          <article class="card-modern project-card h-100">
-            <img [src]="project.image" [alt]="'Image projet ' + project.name">
-            <div class="p-4">
-              <h4>{{ project.name }}</h4>
-              <p>{{ project.description }}</p>
+        <article class="premium-card overflow-hidden group" appRevealOnScroll>
+          <div class="overflow-hidden">
+            <img
+              [src]="project.image"
+              [alt]="'Image projet ' + project.name"
+              class="w-full h-56 sm:h-64 object-cover group-hover:scale-[1.03] transition duration-500">
+          </div>
 
-              <div class="tech-grid mb-4">
-                @for (tech of project.technologies; track tech) {
-                  <span>{{ tech }}</span>
-                }
-              </div>
+          <div class="p-6 sm:p-7">
+            <h4 class="text-2xl font-semibold mb-2">{{ project.name }}</h4>
+            <p class="text-[var(--text-secondary)] mb-4">{{ project.description }}</p>
 
-              <div class="d-flex flex-wrap gap-2">
-                <a [href]="project.github" class="btn btn-outline-modern" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-brands fa-github"></i> Voir le code
-                </a>
-                <a [href]="project.demo" class="btn btn-accent" target="_blank" rel="noopener noreferrer">
-                  <i class="fa-solid fa-play"></i> Demo
-                </a>
-              </div>
+            <div class="flex flex-wrap gap-2 mb-5">
+              @for (tech of project.technologies; track tech) {
+                <span class="premium-pill">{{ tech }}</span>
+              }
             </div>
-          </article>
-        </div>
+
+            <div class="flex flex-wrap gap-2.5">
+              <a [href]="project.github" target="_blank" rel="noopener noreferrer" class="btn-secondary-premium">
+                <i class="fa-brands fa-github"></i>
+                Voir le code
+              </a>
+              <a [href]="project.demo" target="_blank" rel="noopener noreferrer" class="btn-primary-premium">
+                <i class="fa-solid fa-play"></i>
+                Voir la demo
+              </a>
+            </div>
+          </div>
+        </article>
       }
     </div>
   </div>

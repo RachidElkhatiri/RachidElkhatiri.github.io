@@ -1,50 +1,53 @@
-<section id="contact" class="section-space">
-  <div class="container">
-    <div class="section-header" appRevealOnScroll>
+<section id="contact">
+  <div class="section-shell">
+    <div class="mb-10 max-w-3xl" appRevealOnScroll>
       <p class="section-kicker">Contact</p>
-      <h3>Discutons de votre prochain projet</h3>
+      <h3 class="section-title">Collaborons sur votre prochain produit digital</h3>
     </div>
 
-    <div class="row g-4">
-      <div class="col-lg-6" appRevealOnScroll>
-        <form [formGroup]="contactForm" (ngSubmit)="submit()" class="card-modern p-4">
-          <div class="mb-3">
-            <label for="name" class="form-label">Nom</label>
-            <input id="name" class="form-control modern-input" type="text" formControlName="name">
+    <div class="grid lg:grid-cols-2 gap-6">
+      <form [formGroup]="contactForm" (ngSubmit)="submit()" class="premium-card p-6 sm:p-7" appRevealOnScroll>
+        <div class="space-y-4">
+          <div>
+            <label for="name" class="block text-sm font-semibold mb-1">Nom</label>
+            <input id="name" class="w-full rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 outline-none focus:border-[#9db7f7]" type="text" formControlName="name">
           </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input id="email" class="form-control modern-input" type="email" formControlName="email">
+          <div>
+            <label for="email" class="block text-sm font-semibold mb-1">Email</label>
+            <input id="email" class="w-full rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 outline-none focus:border-[#9db7f7]" type="email" formControlName="email">
           </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" class="form-control modern-input" rows="5" formControlName="message"></textarea>
+          <div>
+            <label for="message" class="block text-sm font-semibold mb-1">Message</label>
+            <textarea id="message" rows="5" class="w-full rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 outline-none focus:border-[#9db7f7]" formControlName="message"></textarea>
           </div>
+        </div>
 
-          @if (submitted && contactForm.invalid) {
-            <p class="validation-text">Merci de remplir correctement tous les champs.</p>
+        @if (submitted && contactForm.invalid) {
+          <p class="text-sm font-semibold text-red-500 mt-3">Merci de remplir correctement tous les champs.</p>
+        }
+
+        <button class="btn-primary-premium mt-5" type="submit">
+          <i class="fa-solid fa-paper-plane"></i>
+          Envoyer
+        </button>
+      </form>
+
+      <div class="premium-card p-6 sm:p-7" appRevealOnScroll>
+        <h4 class="text-xl font-semibold mb-4">Coordonnees</h4>
+        <div class="space-y-3">
+          @for (item of contacts; track item.label) {
+            <a
+              class="flex items-center gap-3 rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-4 hover:border-[#cad4e8] transition-colors"
+              [href]="item.link"
+              target="_blank"
+              rel="noopener noreferrer">
+              <i [class]="item.iconClass + ' text-[#2b6df8] text-lg'"></i>
+              <div>
+                <p class="mb-0 font-semibold">{{ item.label }}</p>
+                <small class="text-[var(--text-secondary)]">{{ item.value }}</small>
+              </div>
+            </a>
           }
-
-          <button class="btn btn-accent" type="submit">
-            <i class="fa-solid fa-paper-plane"></i> Envoyer
-          </button>
-        </form>
-      </div>
-
-      <div class="col-lg-6" appRevealOnScroll>
-        <div class="card-modern p-4 h-100">
-          <h4 class="mb-3">Coordonnees</h4>
-          <div class="contact-list">
-            @for (item of contacts; track item.label) {
-              <a class="contact-item" [href]="item.link" target="_blank" rel="noopener noreferrer">
-                <i [class]="item.iconClass"></i>
-                <div>
-                  <p class="mb-0 fw-bold">{{ item.label }}</p>
-                  <small>{{ item.value }}</small>
-                </div>
-              </a>
-            }
-          </div>
         </div>
       </div>
     </div>

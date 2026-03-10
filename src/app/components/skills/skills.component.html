@@ -1,22 +1,21 @@
-<section id="skills" class="section-space">
-  <div class="container">
-    <div class="section-header" appRevealOnScroll>
+<section id="skills">
+  <div class="section-shell">
+    <div class="mb-12 max-w-3xl" appRevealOnScroll>
       <p class="section-kicker">Competences techniques</p>
-      <h3>Stack maitrisee de bout en bout</h3>
+      <h3 class="section-title">Un socle technique complet pour des produits robustes</h3>
+      <p class="section-subtitle mt-3">Backend, frontend, base de donnees et industrialisation dans une logique full stack.</p>
     </div>
 
-    <div class="row g-4">
+    <div class="grid md:grid-cols-2 gap-6">
       @for (group of skillGroups; track group.category) {
-        <div class="col-md-6" appRevealOnScroll>
-          <article class="card-modern p-4 h-100">
-            <h4 class="mb-3">{{ group.category }}</h4>
-            <div class="tech-grid">
-              @for (tech of group.items; track tech) {
-                <span>{{ tech }}</span>
-              }
-            </div>
-          </article>
-        </div>
+        <article class="premium-card p-6 sm:p-7" appRevealOnScroll>
+          <h4 class="text-xl font-semibold mb-4">{{ group.category }}</h4>
+          <div class="flex flex-wrap gap-2.5">
+            @for (tech of group.items; track tech) {
+              <span class="premium-pill">{{ tech }}</span>
+            }
+          </div>
+        </article>
       }
     </div>
   </div>
