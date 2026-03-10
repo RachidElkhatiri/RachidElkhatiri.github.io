@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+
+.portfolio-shell {
+  min-height: 100vh;
+}

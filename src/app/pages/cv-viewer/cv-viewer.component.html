@@ -1,0 +1,33 @@
+<section class="min-h-screen py-8 px-4 sm:px-8 cv-page">
+
+  <div class="max-w-6xl mx-auto">
+    <div class="cv-shell rounded-2xl p-4 sm:p-6">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+        <div>
+          <p class="text-xs uppercase tracking-widest cv-kicker mb-1">Visualisation du CV</p>
+          <h1 class="text-2xl sm:text-3xl font-bold cv-title">Mon CV</h1>
+          <p class="cv-subtitle mb-0">Visualisation integree du CV.</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a [href]="pdfPath" target="_blank" rel="noopener noreferrer" class="cv-open-btn inline-flex items-center gap-2">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            Ouvrir dans un nouvel onglet
+          </a>
+          <a routerLink="/" class="cv-back-btn inline-flex items-center gap-2">
+            <i class="fa-solid fa-arrow-left"></i>
+            Retour au portfolio
+          </a>
+        </div>
+      </div>
+
+      <div class="cv-frame-wrapper rounded-xl overflow-hidden">
+        <iframe
+          [src]="pdfViewerUrl"
+          class="w-full cv-frame"
+          title="CV Viewer"
+          referrerpolicy="no-referrer">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>

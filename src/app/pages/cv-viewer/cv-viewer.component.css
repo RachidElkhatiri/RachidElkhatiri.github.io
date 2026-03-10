@@ -1,0 +1,76 @@
+:host {
+  display: block;
+}
+
+.cv-page {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.cv-shell {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.cv-kicker {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.cv-title {
+  color: var(--text-primary);
+}
+
+.cv-subtitle {
+  color: var(--text-secondary);
+}
+
+.cv-back-btn {
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text-primary);
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.95rem;
+  text-decoration: none;
+}
+
+.cv-open-btn {
+  border: 1px solid transparent;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.95rem;
+  text-decoration: none;
+}
+
+.cv-open-btn:hover {
+  background: var(--accent-strong);
+  color: #fff;
+}
+
+.cv-back-btn:hover {
+  background: var(--accent-soft);
+}
+
+.cv-loader,
+.cv-error {
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+}
+
+.cv-frame-wrapper {
+  border: 1px solid var(--border);
+  background: #f2f2f2;
+}
+
+:root.dark-theme .cv-frame-wrapper {
+  background: #0f172a;
+}
+
+.cv-frame {
+  min-height: calc(180vh - 240px);
+  border: 0;
+}
